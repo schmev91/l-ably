@@ -9,3 +9,4 @@ Route::get('/', function () {
 
 
 Route::get('ably',[AblyController::class, 'trigger']);
+Route::get('ably/auth',[AblyController::class, 'auth']);

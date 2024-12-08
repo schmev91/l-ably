@@ -18,4 +18,16 @@ class AblyController extends Controller
         $channel = $this->ably->channels->get('inw');
         $channel->publish('Okaerinasai');
     }
+
+    public function auth(){
+        $tokenParams = [
+            'clientId'=> "1"
+        ];
+
+        $tokenInfo = $this
+            ->ably
+            ->auth
+        ->requestToken($tokenParams); 
+        return response()->json($tokenInfo);
+    }
 }
